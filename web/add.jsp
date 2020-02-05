@@ -9,7 +9,20 @@
 <html>
 <head>
     <title>新增花卉信息</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link type="text/css" rel="stylesheet" href="css/add.css">
+    <script type="text/javascript">
+        $(function () {
+            $("form").submit(function () {
+                //如果name,price,production为空,那么就返回false
+                //获取表单元素 type属性值:eq(0),获取第一个表单元素
+                if ($(":text:eq(0)").val() == "" || $(":text:eq(1)").val() == "" || $(":text:eq(2)").val() == "") {
+                    alert("请添加完整信息")
+                    return false;
+                }
+            })
+        });
+    </script>
 </head>
 <body>
 <!--

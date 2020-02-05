@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>花卉信息界面</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <link type="text/css" rel="stylesheet" href="css/index.css">
 </head>
 <body>
