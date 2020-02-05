@@ -10,26 +10,56 @@
 <html>
 <head>
     <title>花卉信息界面</title>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
     <link type="text/css" rel="stylesheet" href="css/index.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript">
+        //删除一行
+        function delRow(rowIndex) {
+            var tbobj = document.getElementById('table1');
+            if (rowIndex == -1) {
+                if (tbobj.rows.length > 1) {
+                    tbobj.deleteRow(tbobj.rows.length - 1);
+                }
+            } else {
+                tbobj.deleteRow(rowIndex);
+            }
+        }
+    </script>
 </head>
 <body>
-<table border="1">
-    <tr>
+<table class="table table-hover">
+    <caption>花卉信息</caption>
+    <thead>
+    <tr class="info">
         <th>花卉编号</th>
         <th>花卉名称</th>
         <th>价格(元)</th>
         <th>原产地</th>
+        <th>操作</th>
     </tr>
+    </thead>
+    <tbody>
     <c:forEach items="${list}" var="flower">
-        <tr>
-            <th>${flower.id}</th>
-            <th>${flower.name}</th>
-            <th>${flower.price}</th>
-            <th>${flower.production}</th>
+        <tr class="active">
+            <td>${flower.id}</td>
+            <td>${flower.name}</td>
+            <td>${flower.price}</td>
+            <td>${flower.production}</td>
+            <td>
+                <div class="btn-group">
+                    <button class="btn btn-default" type="button" οnclick="updateRowInfo()">修改</button>
+                    <button class="btn btn-default" type="button" οnclick="deleteRowInfo()">删除</button>
+                </div>
+            </td>
         </tr>
     </c:forEach>
+    </tbody>
 </table>
-<a href="add.jsp">添加新的花卉信息</a>
+<div class="btn-group">
+    <button class="btn btn-default" type="button" οnclick="deleteRowInfo()">
+        <a href="add.jsp">新增花卉信息</a>
+    </button>
+</div>
 </body>
 </html>

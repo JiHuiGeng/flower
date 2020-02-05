@@ -10,6 +10,7 @@
 <head>
     <title>新增花卉信息</title>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/add.css">
     <script type="text/javascript">
         $(function () {
