@@ -35,4 +35,19 @@ public class FlowerServiceImpl implements FlowerService {
 
         return flowerDao.insertFlower(flower);
     }
+
+    @Override
+    public int deleteFlowerById(int id) {
+        return flowerDao.deleteFlowerById(id);
+    }
+
+    @Override
+    public int deleteFlowerByProduction(String production) {
+        return flowerDao.deleteFlowerByProduction(production);
+    }
+
+    @Override
+    public int updateFlower(Flower flower) {
+        return flowerDao.updateFlower(flower);
+    }
 }
